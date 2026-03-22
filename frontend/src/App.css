@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.container {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  padding: 3rem;
+  max-width: 800px;
+  width: 100%;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.5s ease-out;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(to right, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #94a3b8;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  background: rgba(15, 23, 42, 0.5);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px dashed #475569;
+  transition: all 0.3s ease;
+}
+
+.upload-section:hover {
+  border-color: #60a5fa;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+input[type="file"] {
+  color: #94a3b8;
+  font-size: 1rem;
+}
+
+input[type="file"]::file-selector-button {
+  background: #334155;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #475569;
+}
+
+button.analyze-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+  width: 100%;
+  max-width: 300px;
+}
+
+button.analyze-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(139, 92, 246, 0.5);
+}
+
+button.analyze-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  animation: pulse 1.5s infinite;
+}
+
+.error {
+  background: rgba(239, 68, 68, 0.1);
+  border-left: 4px solid #ef4444;
+  color: #fca5a5;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+}
+
+/* Results Styling */
+.results-section {
+  margin-top: 3rem;
+  animation: slideUp 0.5s ease-out;
+}
+
+.score-card {
+  text-align: center;
+  background: rgba(15, 23, 42, 0.6);
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.score-card h2 {
+  font-size: 4rem;
+  color: #f8fafc;
+  margin-bottom: 0.5rem;
+}
+
+.score-card .verdict-text {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  font-style: italic;
+}
+
+h3 {
+  color: #60a5fa;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 0.5rem;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag {
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.bullet-card {
+  background: rgba(15, 23, 42, 0.6);
+  border-left: 4px solid #8b5cf6;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0 12px 12px 0;
+}
+
+.bullet-card p {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+.bullet-card p:last-child {
+  margin-bottom: 0;
+}
+
+.improvement-text {
+  color: #a78bfa;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0% { opacity: 0.7; } 50% { opacity: 0.4; } 100% { opacity: 0.7; } }
